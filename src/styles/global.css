@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.4;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 2.5s infinite;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: white;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.glitch::before {
+  animation: glitchTop 2s infinite;
+  color: cyan;
+  top: -2px;
+}
+.glitch::after {
+  animation: glitchBottom 2s infinite;
+  color: magenta;
+  top: 2px;
+}
+
+@keyframes glitchTop {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(0, 9999px, 5px, 0); }
+  20% { clip: rect(0, 9999px, 3px, 0); }
+  30% { clip: rect(0, 9999px, 6px, 0); }
+}
+
+@keyframes glitchBottom {
+  0%, 100% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(5px, 9999px, 10px, 0); }
+  20% { clip: rect(3px, 9999px, 8px, 0); }
+  30% { clip: rect(4px, 9999px, 7px, 0); }
+}

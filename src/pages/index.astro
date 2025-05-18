@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Neverprod">
+  <section class="min-h-screen bg-black text-white flex flex-col justify-center items-center p-8">
+    <h1 class="text-5xl font-bold text-michi-blue animate-flicker">Neverprod</h1>
+    <p class="text-xl mt-4 text-michi-blue">Where your code breaks beautifully 💻</p>
+    <a href="https://github.com/zyrian-nova" target="_blank" class="mt-6 px-4 py-2 bg-white text-black font-bold rounded hover:bg-michi-orange transition">Join the chaos</a>
+    <!-- Arrow Scroll Button -->
+    <a href="#bottom-scroll" class="mt-10 animate-bounce text-michi-blue hover:text-michi-orange transition text-4xl" title="Scroll down">
+        ↓
+    </a>
+  </section>
+
+  <section class="bg-[#111827] text-gray-300 px-8 py-20">
+    <h2 class="text-3xl font-semibold mb-4">Why test in style?</h2>
+    <p>Neverprod is not your average staging ground. It’s where bugs get pampered and ideas break loose. Designed to look good while failing.</p>
+  </section>
+
+  <section class="bg-[#0f172a] p-8 text-mono text-green-400 font-mono">
+    <h3 class="text-xl mb-4">~ terminal logs</h3>
+    <pre class="bg-black p-4 rounded-lg overflow-x-auto">
+$ deploy neverprod
+🧪 Running with chaos
+💥 Test failed (as expected)
+✨ Beauty preserved
+    </pre>
+  </section>
+
+  <!-- Scroll Target -->
+  <div id="bottom-scroll" class="pt-20"></div>
+
+  <footer class="bg-[#0a0a0a] text-gray-400 py-6 text-center text-sm">
+    &copy; {new Date().getFullYear()} Neverprod — not for production use. Ever.
+  </footer>
+</Layout>
